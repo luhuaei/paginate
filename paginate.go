@@ -224,16 +224,6 @@ func (r resContext) Response(res interface{}) Page {
 	if page.TotalPages > 0 {
 		page.MaxPage = page.TotalPages - 1
 	}
-	if page.TotalPages < 1 {
-		page.TotalPages = 1
-	}
-	if page.MaxPage < 1 {
-		page.MaxPage = 1
-	}
-	if page.Total < 1 {
-		page.MaxPage = 0
-		page.TotalPages = 0
-	}
 	page.First = causes.Offset < 1
 	page.Last = page.MaxPage == page.Page
 
